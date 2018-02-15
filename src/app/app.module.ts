@@ -13,12 +13,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './core/modules/app-routing.module';
 import { AuthModule } from './core/modules/auth.module';
 import { FirebaseModule } from './core/modules/firebase.module';
-import { MenuComponent } from './core/components/menu/menu.component';
+import { MenuModule } from './core/modules/menu.module';
+import { PlayModule } from './core/modules/play.module';
+import { RecordsModule } from './core/modules/records.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent,
+    AppComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -26,7 +28,10 @@ import { MenuComponent } from './core/components/menu/menu.component';
     ToastrModule.forRoot(),
     AppRoutingModule,
     AuthModule,
-    FirebaseModule
+    FirebaseModule,
+    MenuModule,
+    PlayModule,
+    RecordsModule
   ],
   exports: [
   ],

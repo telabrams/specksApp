@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Services
 import { AuthService } from '../services/auth.service';
+import { AuthGuardService } from '../services/auth-guard.service';
 
 //Componets
 import { AuthViewComponent } from '../components/auth/auth-view/auth-view.component';
@@ -35,7 +36,8 @@ import { SignupComponent } from '../components/auth/signup/signup.component';
     SignupComponent
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuardService
   ]
 })
 export class AuthModule { }

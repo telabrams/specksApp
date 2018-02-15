@@ -1,6 +1,11 @@
 // Colors
 $breze: #e9f7fb;
+$active: #ff8eb4;
+
+.active {
+  background-color: $active;
+}
 
 .breze-cl {
-  color: $breze;  
+  color: $breze;
 }

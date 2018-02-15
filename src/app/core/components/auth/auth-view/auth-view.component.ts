@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+//Services
+import { AuthService } from '../../../services/auth.service';
+
 @Component({
   selector: 'app-auth-view',
   templateUrl: './auth-view.component.html',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private as: AuthService
+  ) { }
 
   ngOnInit() {
   }
