@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container" *ngIf="gameState">
   <div class="row justify-content-center">
     <div class="col-7 justify-content-center d-flex">
       <div class="container">
         <div class="play-zone row">
           <div class="play-zone-element col-4 d-flex justify-content-center align-items-center"
-            *ngFor="let element of game.elements" [ngClass]="{'empty' : element === 0}"
+            *ngFor="let element of gameState.elements" [ngClass]="{'empty' : element === 0}"
             (click)="swipe(element)">{{ element }}</div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div (click)="test()">win huck</div>

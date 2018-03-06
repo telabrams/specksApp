@@ -1,66 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+// rxjs
+import "rxjs/add/operator/takeUntil";
+import { Subject } from "rxjs/Subject";
 
 // Interfaces
-import { Game } from '../../models/game.model';
+import { Game, Actions } from '../../models/game.model';
 
 // Services
 import { UserService } from '../../services/user.service';
+import { PlayService } from '../../services/play.service';
 
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
-  styleUrls: ['./play.component.scss']
+  styleUrls: ['./play.component.scss'],
+  providers: [ PlayService ]
 })
 export class PlayComponent implements OnInit {
-  private game: Game;
+  private gameState: Game;
+  private actions: Actions;
+  private unsubscribe: Subject<void> = new Subject();
 
   constructor(
     private us: UserService,
+    private ps: PlayService
   ) {
-    this.game = {
-      time: 0,
-      steps: 0,
-      elements: this.randomize(15)
-    }
+    this.ps.generateStartState()
+      .takeUntil(this.unsubscribe)
+      .subscribe(data => {
+        this.gameState = data;
+      });
   }
 
-  private randomize(quantity: number): Array<number> {
-    let arr = [];
-    while (arr.length < quantity) {
-      let randomNum = Math.floor(Math.random()*quantity);
-      if (arr.indexOf(randomNum) > -1) continue;
-      arr[arr.length] = randomNum;
-    }
-    return arr;
-  }
-
-  private swipe(element) {
-    let elementPosition = this.game.elements.indexOf(element);
-    let emptyPosition = this.game.elements.indexOf(0);
-    let array = this.game.elements;
-
-    console.log(this.game.elements);
-    console.log(elementPosition, emptyPosition);
-
-    array.reduce((prev, cur, index, arr) => {
-      if (cur === elementPosition) {
-        console.log(cur);
-        return array[cur] = 0;
-
-      }
-      if (cur === emptyPosition) {
-        console.log(cur);
-        return array[cur] = element;
-      }
-      console.log(arr)
-      // return arr;
-    }, 0)
-    console.log(array);
-
+  private swipe(element: number) {
+    this.ps.startGame();
+    this.ps.changeState(element);
   }
 
   ngOnInit() {
-    console.log(this.game);
+    // console.log(this.game);
+  }
+
+  test() {
+    this.ps.winHuck(1520352508);
+  }
+
+  ngOnDestroy() {
+    console.log('destroyed!')
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
 

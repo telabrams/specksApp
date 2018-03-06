@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 //Modules
 import { MaterialModule } from './ng-material.module';
 import { AppRoutingModule } from '../modules/app-routing.module';
+import { MomentModule } from 'angular2-moment';
 
 //Components
 import { PlayComponent } from '../components/play/play.component';
@@ -13,6 +14,7 @@ import { PlayComponent } from '../components/play/play.component';
     CommonModule,
     MaterialModule,
     AppRoutingModule,
+    MomentModule
   ],
   declarations: [
     PlayComponent
