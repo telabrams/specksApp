@@ -1,5 +1,5 @@
 <!-- Auth tabs -->
-<div class="container specks-nav mt-4">
+<div class="container mt-4">
   <div class="row">
     <div class="col-6 d-flex justify-content-center">
       <button mat-raised-button color="accent" class="p-0">
@@ -18,3 +18,13 @@
 <!-- View -->
 <router-outlet></router-outlet>
 <!-- View -->
+
+<!-- To Dashboard -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <button *ngIf="isAuth | async" routerLink="/dashboard" mat-raised-button color="accent">Dashbord -></button>
+    </div>
+  </div>
+</div>
+<!-- To Dashboard -->

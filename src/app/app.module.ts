@@ -16,6 +16,8 @@ import { FirebaseModule } from './core/modules/firebase.module';
 import { MenuModule } from './core/modules/menu.module';
 import { PlayModule } from './core/modules/play.module';
 import { RecordsModule } from './core/modules/records.module';
+import { DashboardModule } from './core/modules/dashboard.module';
+import { ProfileModule } from './core/modules/profile.module';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { RecordsModule } from './core/modules/records.module';
     FirebaseModule,
     MenuModule,
     PlayModule,
-    RecordsModule
+    RecordsModule,
+    DashboardModule,
+    ProfileModule
   ],
   exports: [
   ],

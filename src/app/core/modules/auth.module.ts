@@ -8,8 +8,8 @@ import { AppRoutingModule } from '../modules/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Services
-import { AuthService } from '../services/auth.service';
 import { AuthGuardService } from '../services/auth-guard.service';
+import { UserService } from '../services/user.service';
 
 //Componets
 import { AuthViewComponent } from '../components/auth/auth-view/auth-view.component';
@@ -36,7 +36,7 @@ import { SignupComponent } from '../components/auth/signup/signup.component';
     SignupComponent
   ],
   providers: [
-    AuthService,
+    UserService,
     AuthGuardService
   ]
 })

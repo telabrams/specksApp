@@ -3,22 +3,28 @@ import { CommonModule } from '@angular/common';
 
 //Modules
 import { MaterialModule } from './ng-material.module';
+import { MenuModule } from '../modules/menu.module';
 import { AppRoutingModule } from '../modules/app-routing.module';
 
+// Sevices
+
 //Components
-import { PlayComponent } from '../components/play/play.component';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    AppRoutingModule,
+    MenuModule,
+    AppRoutingModule
   ],
   declarations: [
-    PlayComponent
+    DashboardComponent
   ],
   exports: [
-    PlayComponent
+    DashboardComponent
+  ],
+  providers: [
   ]
 })
-export class PlayModule { }
+export class DashboardModule { }

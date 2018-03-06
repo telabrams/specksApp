@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-//Services
-import { AuthService } from '../../../services/auth.service';
+// Services
+import { UserService } from '../../../services/user.service';
+
+// Rxjs
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-auth-view',
@@ -9,10 +12,13 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./auth-view.component.scss']
 })
 export class AuthViewComponent implements OnInit {
+  isAuth: Observable<string>;
 
   constructor(
-    private as: AuthService
-  ) { }
+    private us: UserService
+  ) {
+    this.isAuth = this.us.isUserAuth();
+  }
 
   ngOnInit() {
   }

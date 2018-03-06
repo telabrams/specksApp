@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 //Modules
 import { MaterialModule } from './ng-material.module';
@@ -12,7 +13,8 @@ import { MenuComponent } from '../components/menu/menu.component';
   imports: [
     CommonModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   declarations: [
     MenuComponent

@@ -1,0 +1,37 @@
+<!-- Profile -->
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-7">
+
+      <!-- Form -->
+      <form [formGroup]="form" class="d-flex flex-column" (submit)="formSubmitted()">
+
+        <mat-form-field class="w-100">
+          <input matInput placeholder="Change name" formControlName="name" required>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="accent" class="p-0">Change</button>
+
+      </form>
+      <!-- Form -->
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-7">
+
+      <!-- Records -->
+      <div class="records d-flex">
+        <div class="steps">
+
+        </div>
+        <div class="time">
+
+        </div>
+      </div>
+      <!-- Records -->
+
+    </div>
+  </div>
+</div>
+<!-- Profile -->

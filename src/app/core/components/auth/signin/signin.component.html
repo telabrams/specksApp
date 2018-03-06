@@ -5,6 +5,7 @@
 
       <!-- Form -->
       <form [formGroup]="form" class="d-flex flex-column" (submit)="formSubmitted()">
+
         <mat-form-field class="w-100">
           <input matInput placeholder="Enter your email" formControlName="email" required>
         </mat-form-field>
@@ -13,10 +14,12 @@
           <input matInput placeholder="Enter your password" formControlName="password" [type]="hide ? 'password' : 'text'" required>
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
         </mat-form-field>
+
         <button type="submit" mat-raised-button color="accent" class="p-0">Login</button>
+        
       </form>
       <!-- Form -->
-      
+
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 //Services
-import { AuthService } from '../../../services/auth.service'
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,26 +16,23 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService
+    private us: UserService
   ) {
     this.form = fb.group({
       password: [null, Validators.required],
-      email: [null, Validators.required]
+      email: [null, Validators.required],
+      name: [null, Validators.required]
     })
   }
 
   ngOnInit() {
-    console.log(this.form);
   }
 
   formSubmitted(): void {
     console.log(this.form.valid)
     if (this.form.valid) {
       console.log('valid')
-      this.auth.createUser(this.form.value.email, this.form.value.password)
-        .subscribe(data => {
-          console.log(data);
-        })
+      this.us.createUser(this.form.value.email, this.form.value.password, this.form.value.name)
     }
   }
 

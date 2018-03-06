@@ -4,21 +4,24 @@ import { CommonModule } from '@angular/common';
 //Modules
 import { MaterialModule } from './ng-material.module';
 import { AppRoutingModule } from '../modules/app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Components
-import { PlayComponent } from '../components/play/play.component';
+import { ProfileComponent } from '../components/profile/profile.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
-    PlayComponent
+    ProfileComponent
   ],
   exports: [
-    PlayComponent
+    ProfileComponent
   ]
 })
-export class PlayModule { }
+export class ProfileModule { }

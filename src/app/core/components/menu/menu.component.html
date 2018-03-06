@@ -2,11 +2,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <button mat-raised-button color="accent" [matMenuTriggerFor]="menu">Menu</button>
+      <button mat-raised-button color="accent"  [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/menu" routerLinkActive="active">Menu</button>
-        <button mat-menu-item routerLink="/play" routerLinkActive="active">Play</button>
-        <button mat-menu-item routerLink="/records" routerLinkActive="active">Records</button>
+        <button mat-menu-item routerLink="/dashboard" routerLinkActive="active">Dashboard</button>
+        <button mat-menu-item routerLink="/dashboard/profile" routerLinkActive="active">Profile</button>
+        <button mat-menu-item routerLink="/dashboard/play" routerLinkActive="active">Play</button>
+        <button mat-menu-item routerLink="/dashboard/records" routerLinkActive="active">Records</button>
         <button mat-menu-item (click)="logout()">Logout</button>
       </mat-menu>
     </div>

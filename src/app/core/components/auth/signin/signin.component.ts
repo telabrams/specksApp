@@ -4,7 +4,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 //Services
-import { AuthService } from '../../../services/auth.service'
+import { UserService } from '../../../services/user.service'
 
 @Component({
   selector: 'app-signin',
@@ -12,11 +12,11 @@ import { AuthService } from '../../../services/auth.service'
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-    form: FormGroup;
+  form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService
+    private us: UserService
   ) {
     this.form = fb.group({
       password: [null, Validators.required],
@@ -32,10 +32,7 @@ export class SigninComponent implements OnInit {
     console.log(this.form.valid)
     if (this.form.valid) {
       console.log('valid')
-      this.auth.loginUser(this.form.value.email, this.form.value.password)
-        .subscribe(data => {
-          console.log(data);
-        })
+      this.us.loginUser(this.form.value.email, this.form.value.password);
     }
   }
 

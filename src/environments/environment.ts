@@ -12,5 +12,8 @@ export const environment = {
     projectId: "specksapp",
     storageBucket: "specksapp.appspot.com",
     messagingSenderId: "55243941004"
+  },
+  api: {
+    apiUrl: "http://localhost:3000"
   }
 };

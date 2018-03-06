@@ -1,0 +1,10 @@
+.play-zone {
+  .play-zone-element {
+    height: 100px;
+    border: 1px solid black;
+
+    &.empty {
+      background-color: black;
+    }
+  }
+}
